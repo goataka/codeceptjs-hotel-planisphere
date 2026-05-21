@@ -13,6 +13,13 @@
         "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples",
         "codeceptjs:demo:ui": "codecept-ui --app  -c node_modules/@codeceptjs/examples"
     },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "core-js",
+            "electron",
+            "playwright"
+        ]
+    },
     "license": "MIT",
     "devDependencies": {
         "@codeceptjs/configure": "^0.10.0",

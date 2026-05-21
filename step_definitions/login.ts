@@ -1,6 +1,6 @@
 const { I } = inject();
 
-const URL = 'https://hotel.testplanisphere.dev/ja/login.html';
+const URL = 'https://hotel-example-site.takeyaqa.dev/ja/login.html';
 
 Given('ログインペ―ジを開く', () => {
   I.amOnPage(URL);

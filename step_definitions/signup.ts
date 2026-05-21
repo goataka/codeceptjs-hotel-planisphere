@@ -1,6 +1,6 @@
 const { I } = inject();
 
-const URL = 'https://hotel.testplanisphere.dev/ja/signup.html';
+const URL = 'https://hotel-example-site.takeyaqa.dev/ja/signup.html';
 
 // TODO
 const LOCATOR = {

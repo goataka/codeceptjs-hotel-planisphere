@@ -15,7 +15,7 @@ export const config: CodeceptJS.MainConfig = {
   helpers: {
     Playwright: {
       browser: 'chromium',
-      url: 'https://hotel.testplanisphere.dev/ja/index.html',
+      url: 'https://hotel-example-site.takeyaqa.dev/ja/index.html',
       windowSize: '1980x1080',
       locale: 'ja-JP',
       video: true,

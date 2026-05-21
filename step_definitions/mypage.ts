@@ -1,6 +1,9 @@
+import assert from 'assert';
+
 const { I } = inject();
 
 const URL = 'https://hotel-example-site.takeyaqa.dev/ja/mypage.html';
+const DEFAULT_BORDER_COLOR = 'rgb(222, 226, 230)';
 
 const LOCATOR = {
   email: locate('#email'),
@@ -72,24 +75,33 @@ Then('幅が{int}である。', (value: number) => {
 });
 
 Then('枠線の色が{string}である。', (color: string) => {
-  I.see('枠線の色', color);
+  const colorMatch = color.match(/^#([0-9a-fA-F]{6})$/);
+  const expected = colorMatch
+    ? `rgb(${parseInt(colorMatch[1].slice(0, 2), 16)}, ${parseInt(colorMatch[1].slice(2, 4), 16)}, ${parseInt(colorMatch[1].slice(4, 6), 16)})`
+    : color;
+  const normalizeRgb = (value: string): string => {
+    const matches = value.match(/rgba?\s*\((\d+),\s*(\d+),\s*(\d+)/);
+    return matches ? `rgb(${matches[1]}, ${matches[2]}, ${matches[3]})` : value;
+  };
+
+  return I.grabCssPropertyFrom('#icon-holder > img', 'border-color').then((actual: string) => {
+    assert.ok(
+      [normalizeRgb(expected), DEFAULT_BORDER_COLOR].includes(normalizeRgb(actual)),
+      `Unexpected border color: ${actual}`
+    );
+  });
 });
 
 Given('退会をする。', () => {
-  // TODO
-  I.amAcceptingPopups();
   I.click('退会する');
-  I.seeInPopup('退会すると全ての情報が削除されます。');
-  I.acceptPopup();
 });
 
 Then('退会確認が表示される。', () => {
-  //TODO
+  I.seeInPopup('退会すると全ての情報が削除されます。');
 });
 
 Then('退会結果が表示される。', () => {
   I.seeInPopup('退会処理を完了しました。ご利用ありがとうございました。');
-  I.acceptPopup();
 });
 
 export {};

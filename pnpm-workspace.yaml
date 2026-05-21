@@ -1,4 +1,6 @@
 allowBuilds:
   core-js: true
+  detox: false
+  dtrace-provider: false
   electron: true
   playwright: true

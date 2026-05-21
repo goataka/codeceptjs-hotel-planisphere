@@ -18,6 +18,7 @@ export const config: CodeceptJS.MainConfig = {
       url: 'https://hotel-example-site.takeyaqa.dev/ja/index.html',
       windowSize: '1980x1080',
       locale: 'ja-JP',
+      ignoreHTTPSErrors: true,
       video: true,
       keepVideoForPassedTests: true,
       disableScreenshots: false,

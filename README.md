@@ -2,6 +2,10 @@
 
 自動化練習サイト「HOTEL PLANISPHERE」を対象に、Gherkin記法のテストを、CodeceptJS で実装したサンプルコードです。
 
+> **このブランチは CodeceptJS v4 版です。**  
+> CodeceptJS v3 のコードは [v3 ブランチ](https://github.com/goataka/codeceptjs-hotel-planisphere/tree/v3) で参照できます。  
+> v3 から v4 への移行内容は [MIGRATION.md](./MIGRATION.md) を参照してください。
+
 ## 概要
 
 ### 対象
@@ -14,9 +18,9 @@
 ### 構成
 
 - 自動化フレームワーク
-  - [CodeceptJS](https://codecept.io/) + [Playwright](https://playwright.dev/)
+  - [CodeceptJS](https://codecept.io/) v4 + [Playwright](https://playwright.dev/)
 - プログラミング言語
-  - [TypeScript](https://www.typescriptlang.org/)
+  - [TypeScript](https://www.typescriptlang.org/)（ESM モード）
 - テスト記法
   - [Gherkin](https://cucumber.io/docs/gherkin/reference/)
 

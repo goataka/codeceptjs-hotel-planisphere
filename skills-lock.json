@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "codeceptjs-auth": {
+      "source": "codeceptjs/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/codeceptjs/skills/codeceptjs-auth/SKILL.md",
+      "computedHash": "45034052c32402b27e5eba02e37186c6de2ce2ac265c837f0fbd8540505b3d06"
+    }
+  }
+}

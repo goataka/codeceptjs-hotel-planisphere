@@ -7,7 +7,7 @@
 ### 対象
 
 - サービス
-  - [HOTEL PLANISPHERE - 自動化練習サイト](https://hotel.testplanisphere.dev/ja/)
+  - [HOTEL PLANISPHERE - 自動化練習サイト](https://hotel-example-site.takeyaqa.dev/ja/)
 - シナリオ
   - [testplanisphere/hotel-example-webdriverio-ja](https://github.com/testplanisphere/hotel-example-webdriverio-ja/)
 
@@ -110,7 +110,7 @@ Configure helpers...
 ? [Playwright] Browser in which testing will be performed. Possible options: chromium, firefox, webkit or electron chrom
 ium
 # ベース URL は HOTEL PLANISPHERE に指定する。
-? [Playwright] Base url of site to be tested https://hotel.testplanisphere.dev/ja/
+? [Playwright] Base url of site to be tested https://hotel-example-site.takeyaqa.dev/ja/
 # テスト時の画面は非表示にする。
 ? [Playwright] Show browser window No
 # 最初に作るシナリオ名は login にする。
@@ -159,7 +159,7 @@ export const config: CodeceptJS.MainConfig = {
   helpers: {
     Playwright: {
       browser: 'chromium', //ブラウザ
-      url: 'https://hotel.testplanisphere.dev/ja/index.html', // 初期URL
+      url: 'https://hotel-example-site.takeyaqa.dev/ja/index.html', // 初期URL
     },
   },
   include: { 
@@ -259,7 +259,7 @@ ref. [Playwright Helper](https://codecept.io/helpers/Playwright/),  [Locators](h
   ```typescript
   const { I } = inject();
 
-  const URL = 'https://hotel.testplanisphere.dev/ja/index.html';
+  const URL = 'https://hotel-example-site.takeyaqa.dev/ja/index.html';
   Given('ホームを開く。', () => {
     // URLを開く
     I.amOnPage(URL);
@@ -289,7 +289,7 @@ ref. [Playwright Helper](https://codecept.io/helpers/Playwright/),  [Locators](h
   ```typescript
   const { I } = inject();
   
-  const URL = 'https://hotel.testplanisphere.dev/ja/mypage.html';
+  const URL = 'https://hotel-example-site.takeyaqa.dev/ja/mypage.html';
 
   Then('マイペ―ジである事を確認する。', () => {
     I.seeCurrentUrlEquals(URL);
@@ -358,15 +358,15 @@ $ npx codeceptjs run --verbose
 
   1) ログイン
       定義済みユーザでログインができること:
-    expected url of current page "https://hotel.testplanisphere.dev/ja/mypage.html" to equal "https://hotel.testplanisphere.dev/ja/login.html"
+    expected url of current page "https://hotel-example-site.takeyaqa.dev/ja/mypage.html" to equal "https://hotel-example-site.takeyaqa.dev/ja/login.html"
   
   Scenario Steps:
-  - I.seeCurrentUrlEquals("https://hotel.testplanisphere.dev/ja/mypage.html") at ./step_definitions/mypage.ts:26:5
+  - I.seeCurrentUrlEquals("https://hotel-example-site.takeyaqa.dev/ja/mypage.html") at ./step_definitions/mypage.ts:26:5
   - I.click("ログイン", "#login-button") at login (./step_definitions/login.ts:24:5)
   - I.fillField("パスワード", "wrong") at login (./step_definitions/login.ts:23:5)
   - I.fillField("メールアドレス", "ichiro@example.com") at login (./step_definitions/login.ts:22:5)
   - I.click("ログイン", nav) at ./step_definitions/login.ts:10:5
-  - I.amOnPage("https://hotel.testplanisphere.dev/ja/index.html") at ./step_definitions/home.ts:6:5
+  - I.amOnPage("https://hotel-example-site.takeyaqa.dev/ja/index.html") at ./step_definitions/home.ts:6:5
 ```
 
 ### 出力された画像や動画、トレースを確認する。

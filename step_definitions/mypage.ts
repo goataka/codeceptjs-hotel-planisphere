@@ -1,6 +1,6 @@
 const { I } = inject();
 
-const URL = 'https://hotel.testplanisphere.dev/ja/mypage.html';
+const URL = 'https://hotel-example-site.takeyaqa.dev/ja/mypage.html';
 
 const LOCATOR = {
   email: locate('#email'),

@@ -93,14 +93,13 @@ v4 では `tryTo` などのプラグインが削除・変更されたため、�
 +    retryFailedStep: {
 +      enabled: true,
 +    },
-+    screenshotOnFail: {
++    screenshot: {
 +      enabled: true,
++      on: 'fail',
 +    },
 +  },
  }
 ```
-
-> **注意**: `screenshotOnFail` は v4 では `screenshot` プラグイン（`on=fail`）の非推奨エイリアスです。
 
 ---
 

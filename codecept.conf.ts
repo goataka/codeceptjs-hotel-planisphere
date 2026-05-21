@@ -33,8 +33,9 @@ export const config: CodeceptJS.MainConfig = {
     retryFailedStep: {
       enabled: true,
     },
-    screenshotOnFail: {
+    screenshot: {
       enabled: true,
+      on: 'fail',
     },
   },
   gherkin: {

@@ -3,6 +3,7 @@
     "version": "2023.9.6",
     "private": true,
     "description": "Example codes for learning test automation.",
+    "packageManager": "pnpm@11.2.2",
     "scripts": {
         "test": "codeceptjs run",
         "codeceptjs": "codeceptjs run --steps",

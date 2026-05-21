@@ -1,4 +1,5 @@
 import assert from 'assert';
+import { locate } from 'codeceptjs';
 
 const { I } = inject();
 

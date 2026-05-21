@@ -1,5 +1,5 @@
 import assert from "assert";
-var fs = require("fs");
+import fs from "node:fs";
 
 const { I } = inject();
 

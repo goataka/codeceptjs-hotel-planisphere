@@ -1,5 +1,5 @@
 /// <reference types='codeceptjs' />
-type steps_file = typeof import('./steps_file');
+type steps_file = typeof import('./steps_file').default;
 
 declare namespace CodeceptJS {
   interface SupportObject { I: I, current: any }

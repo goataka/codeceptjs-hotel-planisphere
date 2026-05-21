@@ -1,12 +1,10 @@
 {
-  "ts-node": {
-    "files": true
-  },
   "compilerOptions": {
-    "target": "es2018",
-    "lib": ["es2018", "DOM"],
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
     "esModuleInterop": true,
-    "module": "commonjs",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "strictNullChecks": false,
     "types": ["codeceptjs", "node"],
     "declaration": true,

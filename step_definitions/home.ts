@@ -3,6 +3,7 @@ import assert from 'assert';
 const { I } = inject();
 
 const URL = 'https://hotel-example-site.takeyaqa.dev/ja/index.html';
+const escapeRegExp = (value: string): string => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 Given('ホームを開く。', () => {
   I.amOnPage(URL);
@@ -14,7 +15,7 @@ Given('ホームに移動する。', () => {
 
 Then('ホームである事を確認する。', async () => {
   const currentUrl = await I.grabCurrentUrl();
-  assert.match(currentUrl, new RegExp(`^${URL.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\??$`));
+  assert.match(currentUrl, new RegExp(`^${escapeRegExp(URL)}\\??$`));
 });
 
 export {};

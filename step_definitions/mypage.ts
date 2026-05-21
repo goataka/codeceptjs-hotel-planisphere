@@ -3,6 +3,7 @@ import assert from 'assert';
 const { I } = inject();
 
 const URL = 'https://hotel-example-site.takeyaqa.dev/ja/mypage.html';
+const DEFAULT_BORDER_COLOR = 'rgb(222, 226, 230)';
 
 const LOCATOR = {
   email: locate('#email'),
@@ -74,9 +75,9 @@ Then('幅が{int}である。', (value: number) => {
 });
 
 Then('枠線の色が{string}である。', (color: string) => {
-  const normalizedColor = color.match(/^#([0-9a-fA-F]{6})$/);
-  const expected = normalizedColor
-    ? `rgb(${parseInt(normalizedColor[1].slice(0, 2), 16)}, ${parseInt(normalizedColor[1].slice(2, 4), 16)}, ${parseInt(normalizedColor[1].slice(4, 6), 16)})`
+  const colorMatch = color.match(/^#([0-9a-fA-F]{6})$/);
+  const expected = colorMatch
+    ? `rgb(${parseInt(colorMatch[1].slice(0, 2), 16)}, ${parseInt(colorMatch[1].slice(2, 4), 16)}, ${parseInt(colorMatch[1].slice(4, 6), 16)})`
     : color;
   const normalizeRgb = (value: string): string => {
     const matches = value.match(/rgba?\s*\((\d+),\s*(\d+),\s*(\d+)/);
@@ -85,7 +86,7 @@ Then('枠線の色が{string}である。', (color: string) => {
 
   return I.grabCssPropertyFrom('#icon-holder > img', 'border-color').then((actual: string) => {
     assert.ok(
-      [normalizeRgb(expected), 'rgb(222, 226, 230)'].includes(normalizeRgb(actual)),
+      [normalizeRgb(expected), DEFAULT_BORDER_COLOR].includes(normalizeRgb(actual)),
       `Unexpected border color: ${actual}`
     );
   });

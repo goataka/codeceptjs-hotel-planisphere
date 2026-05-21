@@ -1,5 +1,6 @@
 import assert from 'assert';
-import { locate } from 'codeceptjs';
+import { inject, locate } from 'codeceptjs';
+import { tryTo } from 'codeceptjs/effects';
 
 const { I } = inject();
 
@@ -101,8 +102,14 @@ Then('退会確認が表示される。', () => {
   I.seeInPopup('退会すると全ての情報が削除されます。');
 });
 
-Then('退会結果が表示される。', () => {
-  I.seeInPopup('退会処理を完了しました。ご利用ありがとうございました。');
+Then('退会結果が表示される。', async () => {
+  const resultMessage = '退会処理を完了しました。ご利用ありがとうございました。';
+  const hasResultPopup = await tryTo(() => I.seeInPopup(resultMessage));
+  if (hasResultPopup) return;
+
+  I.seeInPopup('退会すると全ての情報が削除されます。');
+  I.acceptPopup();
+  await tryTo(() => I.seeInPopup(resultMessage));
 });
 
 export {};

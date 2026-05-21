@@ -1,4 +1,4 @@
-import { locate } from 'codeceptjs';
+import { inject, locate } from 'codeceptjs';
 import { tryTo } from 'codeceptjs/effects';
 
 const { I } = inject();

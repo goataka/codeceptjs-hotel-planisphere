@@ -1,3 +1,5 @@
+import { inject } from 'codeceptjs';
+
 const { I } = inject();
 
 const verifyTotalBill = (increment: number, term: number, calcTotalBill: Function) => {

@@ -1,4 +1,4 @@
-import { locate } from 'codeceptjs';
+import { inject, locate } from 'codeceptjs';
 
 const { I } = inject();
 

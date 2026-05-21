@@ -79,7 +79,7 @@ Then('枠線の色が{string}である。', (color: string) => {
     ? `rgb(${parseInt(normalizedColor[1].slice(0, 2), 16)}, ${parseInt(normalizedColor[1].slice(2, 4), 16)}, ${parseInt(normalizedColor[1].slice(4, 6), 16)})`
     : color;
   const normalizeRgb = (value: string): string => {
-    const matches = value.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+    const matches = value.match(/rgba?\s*\((\d+),\s*(\d+),\s*(\d+)/);
     return matches ? `rgb(${matches[1]}, ${matches[2]}, ${matches[3]})` : value;
   };
 

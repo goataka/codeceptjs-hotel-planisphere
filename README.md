@@ -90,10 +90,10 @@ $ mkdir codeceptjs-hotel-planishpere
 $ cd codeceptjs-hotel-planishpere
 
 # CodeceptJS と Playwright をインストールする。
-$ npx create-codeceptjs .
+$ pnpm dlx create-codeceptjs .
 
 # プロジェクトの初期化をする。
-$ npx codeceptjs init
+$ pnpm exec codeceptjs init
 # TypeScriptは利用する。
 ? Do you plan to write tests in TypeScript? Yes
 # テストを各ファイル名のルールだが、今回は使用しない。
@@ -119,7 +119,7 @@ ium
 ? Filename of a test login.ts
 
 # Gherkin 用の初期化をする。
-$ npx codeceptjs gherkin:init
+$ pnpm exec codeceptjs gherkin:init
 ```
 
 ## フォルダ構成
@@ -318,23 +318,23 @@ ref. [Commands | CodeceptJS](https://codecept.io/commands/#commands)
 
 ```sh
 # ログインを実行する。
-$ npx codeceptjs run features/login.feature
+$ pnpm exec codeceptjs run features/login.feature
 
 # 特定のシナリオだけ実行する。
-$ npx codeceptjs run --verbose --grep "定義済みユーザでログインができること"
+$ pnpm exec codeceptjs run --verbose --grep "定義済みユーザでログインができること"
 
 # 全シナリオを実行する。
-$ npx codeceptjs run 
+$ pnpm exec codeceptjs run 
 ```
 
 ### プロジェクト作成してない場合
 
 ```sh
 # ライブラリをインストールする。
-$ npm ci
+$ pnpm install --frozen-lockfile
 
 # Playwright の関連ライブラリをインストールする。
-$ npx playwright install-deps
+$ pnpm exec playwright install-deps
 ```
 
 ## デバッグ実行
@@ -342,7 +342,7 @@ $ npx playwright install-deps
 ### デバック用引数を指定して実行する。
 
 ```sh
-$ npx codeceptjs run --verbose
+$ pnpm exec codeceptjs run --verbose
 ```
 
 ### ステップの実行状況を確認する。

@@ -330,7 +330,7 @@ $ pnpm exec codeceptjs run
 ### プロジェクト作成してない場合
 
 ```sh
-# ライブラリをインストールする。
+# ライブラリをインストールする（npm ci 相当）。
 $ pnpm install --frozen-lockfile
 
 # Playwright の関連ライブラリをインストールする。

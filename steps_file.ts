@@ -1,6 +1,6 @@
 import assert from "assert";
 
-export = function() {
+export default function() {
   return actor({
     seeNumberOfTabs: async (expected: number)=> {
       const actual = await this.grabNumberOfOpenTabs();

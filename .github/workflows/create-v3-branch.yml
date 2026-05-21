@@ -1,0 +1,31 @@
+name: Create v3 branch
+
+on:
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: 'SHA to create v3 branch from (default: last pre-v4 commit)'
+        required: false
+        default: '9adf572283b45b4f39d8da35e10ff0ee86938b59'
+
+permissions:
+  contents: write
+
+jobs:
+  create-v3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create v3 branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          SHA="${{ github.event.inputs.sha }}"
+          if git ls-remote --exit-code origin refs/heads/v3; then
+            echo "v3 branch already exists, skipping"
+          else
+            git push origin "${SHA}:refs/heads/v3"
+            echo "v3 branch created at ${SHA}"
+          fi

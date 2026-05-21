@@ -3,4 +3,9 @@ allowBuilds:
   detox: false
   dtrace-provider: false
   electron: true
+  esbuild: true
   playwright: true
+minimumReleaseAgeExclude:
+  - codeceptjs@4.0.0
+patchedDependencies:
+  codeceptjs@4.0.0: patches/codeceptjs@4.0.0.patch

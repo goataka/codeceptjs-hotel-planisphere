@@ -1,0 +1,13 @@
+diff --git a/lib/utils/typescript.js b/lib/utils/typescript.js
+index 5f9d0d4174cb522a8b0a2705f6b85d692991c0f9..6f95986181a7d2f2b5c4aed5716412994f857dea 100644
+--- a/lib/utils/typescript.js
++++ b/lib/utils/typescript.js
+@@ -65,7 +65,7 @@ function resolveTsPathAlias(importPath, tsConfig, configDir) {
+  * @returns {Promise<{tempFile: string, allTempFiles: string[], fileMapping: any}>} - Main temp file and all temp files created
+  */
+ export async function transpileTypeScript(mainFilePath, typescript) {
+-  const { transpile } = typescript
++  const { transpile } = typescript.default || typescript
+ 
+   /**
+    * Transpile a single TypeScript file to JavaScript

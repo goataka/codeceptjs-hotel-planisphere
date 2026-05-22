@@ -1,3 +1,5 @@
+import { inject, locate } from 'codeceptjs';
+
 const { I } = inject();
 
 Given('アイコン画像に{string}を登録する。', (fileName: string) => {

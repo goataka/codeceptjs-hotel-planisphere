@@ -1,5 +1,7 @@
 import assert from "assert";
-var fs = require("fs");
+import fs from "node:fs";
+import { inject } from "codeceptjs";
+import { tryTo } from "codeceptjs/effects";
 
 const { I } = inject();
 
@@ -7,8 +9,8 @@ Given('{int}秒待つ。', (sec: number) => {
   I.wait(sec);
 });
 
-Given('確認を受け入れる。', () => {
-  I.acceptPopup();
+Given('確認を受け入れる。', async () => {
+  await tryTo(() => I.acceptPopup());
 });
 
 Given('{string}にフォーカスする。', (field: string) => {

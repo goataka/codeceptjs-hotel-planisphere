@@ -1,14 +1,3 @@
-import {
-  setHeadlessWhen,
-  setCommonPlugins
-} from '@codeceptjs/configure';
-// turn on headless mode when running with HEADLESS=true environment variable
-// export HEADLESS=true && pnpm exec codeceptjs run
-setHeadlessWhen(process.env.HEADLESS);
-
-// enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
-setCommonPlugins();
-
 export const config: CodeceptJS.MainConfig = {
   tests: './*_test.ts',
   output: './output',
@@ -31,7 +20,7 @@ export const config: CodeceptJS.MainConfig = {
     },
   },
   include: {
-    I: './steps_file'
+    I: './steps_file.ts'
   },
   gherkin: {
     features: [
@@ -55,5 +44,6 @@ export const config: CodeceptJS.MainConfig = {
     ]
   },
   avoidDuplicateSteps: true,
+  noGlobals: true,
   name: 'codeceptjs-hotel-planisphere'
 }

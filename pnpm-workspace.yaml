@@ -4,3 +4,5 @@ allowBuilds:
   dtrace-provider: false
   electron: true
   playwright: true
+minimumReleaseAgeExclude:
+  - codeceptjs@4.0.0

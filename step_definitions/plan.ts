@@ -1,3 +1,5 @@
+import { inject, locate } from 'codeceptjs';
+
 const { I } = inject();
 
 const URL = 'https://hotel-example-site.takeyaqa.dev/ja/plans.html';
